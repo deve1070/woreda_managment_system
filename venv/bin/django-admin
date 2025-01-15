@@ -1,4 +1,4 @@
-#!/home/dawit/woreda_managment_system/venv/bin/python3
+#!/home/dawit/FSE_project/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
