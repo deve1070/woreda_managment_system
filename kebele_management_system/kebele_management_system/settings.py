@@ -12,10 +12,13 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import environ
+import os
 
 # Initialize environment variables
 env = environ.Env(DEBUG=(bool, False))  # Default for DEBUG is False
-
+ 
+MEDIA_ROOT =os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'
 # Read the .env file
 environ.Env.read_env()
 
@@ -47,6 +50,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "services.apps.ServicesConfig",
+    "residents.apps.ResidentsConfig",
+    "announcements.apps.AnnouncementsConfig",
+    "auth.apps.AuthConfig",
     "debug_toolbar",
     "django.contrib.admin",
     "django.contrib.auth",
