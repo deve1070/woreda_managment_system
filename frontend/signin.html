@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+  </head>
+  <style>
+    html,
+    body {
+      overflow-x: hidden;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .nav-link {
+      display: block;
+    }
+  </style>
+  <body>
+    <header class="d-flex align-items-center bg-turquoise p-3">
+      <a href="../Home.html">
+        <img
+          src="./assets/images/image.png"
+          alt="Logo"
+          class="img-fluid"
+          style="max-width: 80px"
+        />
+      </a>
+      <nav class="ml-auto d-none d-md-block">
+        <ul class="d-flex list-unstyled">
+          <li class="mx-3"><a href="../Home.html" class="nav-link">HOME</a></li>
+          <li class="mx-3">
+            <a href="../about.html" class="nav-link">ABOUT US</a>
+          </li>
+          <li class="mx-3">
+            <a href="./index.html" class="nav-link">ROUTE</a>
+          </li>
+          <li class="mx-3">
+            <a href="../contact.html" class="nav-link">CONTACT</a>
+          </li>
+          <li class="mx-3">
+            <a href="../signup.html" class="nav-link">SIGN UP</a>
+          </li>
+          <li class="mx-3">
+            <a href="../signin.html" class="nav-link">SIGN IN</a>
+          </li>
+        </ul>
+      </nav>
+      <button
+        id="menu-toggle"
+        class="menu-toggle d-md-none"
+        style="
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          cursor: pointer;
+        "
+      >
+        ☰
+      </button>
+    </header>
+
+    <div class="container mt-5">
+      <h2>Sign In</h2>
+      <form id="signinForm">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+        <small
+          >Don't have an account? <a href="./signup.html">Sign up</a></small
+        >
+      </form>
+    </div>
+
+    <footer class="bg-turquoise text-white">
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-md-4 text-center">
+            <a href="./Home.html">
+              <img
+                width="100px"
+                src="./assets/images/image.png"
+                alt="Logo"
+                class="img-fluid mb-3"
+              />
+            </a>
+            <p class="caption">YOUR TRUSTED TRAVEL PARTNER!</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="text-uppercase">Useful Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="./Home.html" class="text-white">Home</a></li>
+              <li><a href="./about.html" class="text-white">About Us</a></li>
+              <li><a href="../src/index.html" class="text-white">Route</a></li>
+              <li><a href="./contact.html" class="text-white">Contact</a></li>
+              <li><a href="./signup.html" class="text-white">Sign Up</a></li>
+              <li><a href="./signin.html" class="text-white">Sign In</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3 class="text-uppercase">Contact</h3>
+            <div class="contact-details">
+              <div class="d-flex align-items-center mb-2">
+                <img
+                  src="./assets/icon/location.png"
+                  alt=""
+                  class="me-2 icon-smaller"
+                />
+                <p class="mb-0">King George VI St, Addis Ababa, Ethiopia</p>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <a href="tel:+25100436787" class="text-white">
+                  <img
+                    src="./assets/icon/call.png"
+                    alt=""
+                    class="me-2 icon-smaller"
+                  />
+                  <span class="mb-0">+251 00 43 67 87</span>
+                </a>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <a href="mailto:TravelLink@gmail.com" class="text-white">
+                  <img
+                    src="./assets/icon/mail.png"
+                    alt=""
+                    class="me-2 icon-smaller"
+                  />
+                  <span class="mb-0">TravelLink@gmail.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3 class="text-uppercase">Follow Us</h3>
+            <div class="social-icons mb-3">
+              <a href="#"><img src="./assets/icon/facebook.png" alt="" /></a>
+              <a href="#"><img src="./assets/icon/instagram.png" alt="" /></a>
+              <a href="#"><img src="./assets/icon/linkedin.png" alt="" /></a>
+              <a href="#"><img src="./assets/icon/twitter.png" alt="" /></a>
+            </div>
+            <p class="caption">© 2025 TravelLink. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./typescript/signin.js"></script>
+    <script src="./js/bootstrap.min.js.map"></script>
+  </body>
+</html>
