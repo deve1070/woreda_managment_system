@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404,redirect
 from .forms import BirthForm,MirrageForm,IdentificatioCardForm,SupportivePaper
 from .models import Birth,Mirrage,IdentificationCard,Supportive
-from django.http import FileResponse,Http404
+from django.http import FileResponse,Http404,JsonResponse
 
 def index(request):
     return render(request,'service.html')
@@ -94,7 +94,29 @@ def download_file(request,file_id):
         raise Http404(f"Error:{e}")
 
 def upadteStatus(request,request_id):
-    servicerequest=
+    if request.method=='POST':
+        status =request.POST.get('status')
+        bithService=get_object_or_404(Birth, id=request_id)
+        mirrageService=get_object_or_404(Birth, id=request_id)
+        idissueService=get_object_or_404(Birth, id=request_id)
+        supportiveService=get_object_or_404(Birth, id=request_id)
+
+        bithService.status=status
+        mirrageService.status=status
+        idissueService.status=status
+        supportiveService.status=status
+
+        bithService.save()
+        mirrageService.save()
+        idissueService.save()
+        supportivePaper.save()
+
+        return JsonResponse({'message':'Stataus updated successfully','status':status})
+    return JsonResponse({'error':'Unauthorized'},status=403)
+
+
+
+
 
 
 

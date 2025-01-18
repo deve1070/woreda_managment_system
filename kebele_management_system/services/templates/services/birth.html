@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
 </head>
 <body>
     {% block content %}
+    <h1>Service Request Status</h1>
+    <p>Service Name:{{brithService.name}}</p>
+    <p>Status:<span id="status">{{birth.status}}</span></p>
+    <script>
+        setInterval(() => {
+            $.getJSON("{% url 'service_re' service_request.id %}", function(data) {
+                $('#status').text(data.status);
+            });
+        }, 5000); 
+    </script>
     <form action="{url'service:birth'}" method="post">
         {% csrf_token %}
         {{form.as_p}}

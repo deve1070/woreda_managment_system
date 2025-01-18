@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .forms import CreateAnnouncementForm
-from .models import Announcement
+from .forms import CreateAnnouncementForm,AcceptContactUSForm
+from .models import Announcement,ContactUs
 
 
 def post(request):
@@ -37,4 +37,16 @@ def deletePost(request,post_id):
     post.delete()
 
 
-# Create your views here.
+
+def contactUs(request):
+    if request.method=='POST':
+        form=AcceptContactUSForm(request.POST)
+        if form.is_valid():
+            form.save()
+        
+        else:
+            return render(request,'contact.html',{'form':form})
+    else:
+        form=AcceptContactUSForm()
+    
+    return render(request,'contact.html',{'form':form})

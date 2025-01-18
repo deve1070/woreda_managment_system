@@ -12,4 +12,8 @@ class Announcement(models.Model):
 
     def __str__(self):
         return "{self.title}\n {self.text}"
-# Create your models here.
+
+class ContactUs(models.Model):
+    name=models.CharField(200)
+    email=models.EmailField()
+    message=models.TextField()
