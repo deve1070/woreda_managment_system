@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min (1).css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://www.strikingly.com/s/sites/30017215/preview?mode=seamless&viewMode=screen"/>
+    <title>Home</title>
+  </head>
+  <body>
+    <header class="d-flex align-items-center bg-turquoise p-3">
+        <a href="./Home.html"><img src="./images/logo.jpg" alt="Logo" class="img-fluid" style="max-width: 80px;"></a>
+        <nav class="ml-auto">
+            <ul class="d-flex list-unstyled">
+                <li class="mx-3"><a href="./Home.html" class="nav-link">Home</a></li>
+                <li class="mx-3"><a href="./about.html" class="nav-link">About us</a></li>
+                <li class="mx-3"><a href="#" class="nav-link">Services</a></li>
+                <li class="mx-3"><a href="#" class="nav-link">Notification</a></li>
+                <li class="mx-3"><a href="#" class="nav-link">Feedback</a></li>
+                <li class="mx-3"><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="notifications">
+            <h2 class="notifications-title">Your Notifications</h2>
+            {% if notifications %}
+              {% for notification in notifications %}
+                <div class="notification-card">
+                  <h3 class="notification-title">{{ notification.title }}</h3>
+                  <p class="notification-message">{{ notification.message }}</p>
+                </div>
+              {% endfor %}
+            {% else %}
+              <p class="no-notifications">No notifications available at the moment.</p>
+            {% endif %}
+          </div>
+          
+    </main>
+<footer class="bg-turquoise text-white">
+        <div class="container">
+          <div class="row py-5">
+            <div class="col-md-4 text-center">
+              <a href="./Home.html">
+                <img
+                  width="100px"
+                  src="./images/logo.jpg"
+                  alt="Logo"
+                  class="img-fluid mb-3"
+                />
+              </a>
+              <p class="caption">EMPOWERING COMMUNITIES THROUGH DIGITAL SOLUTIONS!</p>
+
+            </div>
+            <div class="col-md-4">
+              <h3 class="text-uppercase">Useful Links</h3>
+              <ul class="list-unstyled">
+                <li><a href="./Home.html" class="text-white">Home</a></li>
+                <li><a href="./contact.html" class="text-white">About Us</a></li>
+                <li><a href="../src/index.html" class="text-white">Service</a></li>
+                <li><a href="./signup.html" class="text-white">Notification</a></li>
+                <li><a href="./signin.html" class="text-white">Feedback</a></li>
+                <li><a href="./contact.html" class="text-white">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h3 class="text-uppercase">Contact</h3>
+              <div class="contact-details">
+                <div class="d-flex align-items-center mb-2">
+                  <img
+                    src="./icons/location.png"
+                    alt=""
+                    class="me-2 icon-smaller"
+                  />
+                  <p class="mb-0">King George VI St, Addis Ababa, Ethiopia</p>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <a href="tel:+25100436787" class="text-white">
+                    <img
+                      src="./icons/call.png"
+                      alt=""
+                      class="me-2 icon-smaller"
+                    />
+                    <span class="mb-0">+251 00 43 67 87</span>
+                  </a>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <a href="mailto:kebelemanagement@arada.gov.et" class="text-white">
+                    <img
+                      src="./icons/mail.png"
+                      alt=""
+                      class="me-2 icon-smaller"
+                    />
+                    <span class="mb-0">kebelemanagement@arada.gov.et</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h3 class="text-uppercase">Follow Us</h3>
+              <div class="social-icons mb-3">
+                <a href="#"
+                  ><img src="./images/facebook-brands-solid.svg" alt=""
+                /></a>
+                <a href="#"
+                  ><img
+                    src="./images/instagram-brands-solid (1).svg"
+                    alt=""
+                /></a>
+                <a href="#"
+                  ><img src="./images/linkedin-brands-solid (1).svg" alt=""
+                /></a>
+                <a href="#"
+                  ><img
+                    src="./images/x-twitter-brands-solid (1).svg"
+                    alt=""
+                /></a>
+              </div>
+              <p class="caption">© 2025 kebelemanagement. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+   
+  </body>
+</html>
