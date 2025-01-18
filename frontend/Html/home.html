@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Home</title>
+</head>
+<body>
+    <header class="d-flex align-items-center bg-turquoise p-3">
+        <a href="./Home.html"><img src="../Assets/images/kebele_logo.jpg" alt="Logo" class="img-fluid" style="max-width: 80px" /></a>
+        <nav class="ml-auto">
+            <ul class="d-flex list-unstyled">
+                <li class="mx-3"><a href="./Home.html" class="nav-link">HOME</a></li>
+                <li class="mx-3"><a href="./about.html" class="nav-link">ABOUT US</a></li>
+                <li class="mx-3"><a href="./contact.html" class="nav-link">SERVICES</a></li>
+                <li class="mx-3"><a href="./signup.html" class="nav-link">NOTIFICATION</a></li>
+                <li class="mx-3"><a href="./signin.html" class="nav-link">FEEDBACK</a></li>
+                <li class="mx-3"><a href="./signin.html" class="nav-link">CONTACT US</a></li>
+                <li class="mx-3" id="profileMenu" style="display: none;">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="profileInitial"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="./profile.html">View Profile</a></li>
+                            <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mx-3" id="adminMenu" style="display: none;">
+                    <a href="./admin.html" class="nav-link">ADMIN</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+      <section class="hero">
+          <div class="hero-content">
+              <h2>Welcome to Woreda 6 Kebele Management System</h2>
+              <p>Your trusted source for local governance and community support tailored to the needs of our residents.</p>
+              <p class="description">
+                  We are committed to fostering a thriving community by providing essential services, facilitating community engagement, and ensuring transparency in governance. Join us in building a brighter future for our kebele!
+              </p>
+              <div class="button-group">
+                  <a href="./signin.html" class="btn btn-primary">Log In</a>
+              </div>
+              <div class="mt-4 text-center">
+                  <p>Don't have an account?</p>
+                  <a href="./signup.html" class="btn btn-primary">Create an Account</a>
+              </div>
+          </div>
+      </section>
+  </main>
+
+    <footer class="bg-turquoise text-white">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-md-4 text-center">
+                    <a href="./Home.html">
+                        <img width="100px" src="../Assets/images/kebele_logo.jpg" alt="Logo" class="img-fluid mb-3" />
+                    </a>
+                    <p class="caption">TOGETHER WE THRIVE!</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="text-uppercase">Useful Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="./Home.html" class="text-white">Home</a></li>
+                        <li><a href="./contact.html" class="text-white">About Us</a></li>
+                        <li><a href="../src/index.html" class="text-white">Service</a></li>
+                        <li><a href="./signup.html" class="text-white">Notification</a></li>
+                        <li><a href="./signin.html" class="text-white">Feedback</a></li>
+                        <li><a href="./contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="text-uppercase">Contact</h3>
+                    <div class="contact-details">
+                        <div class="d-flex align-items-center mb-2">
+                            <img src="../Assets/icons/location-dot-solid.svg" alt="" class="me-2 icon-smaller" />
+                            <p class="mb-0">King George VI St, Addis Ababa, Ethiopia</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <a href="tel:+25100436787" class="text-white">
+                                <img src="../Assets/icons/phone-solid.svg" alt="" class="me-2 icon-smaller" />
+                                <span class="mb-0">+251 00 43 67 87</span>
+                            </a>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <a href="mailto:kebelemanagement@arada.gov.et" class="text-white">
+                                <img src="../Assets/icons/envelope-solid.svg" alt="" class="me-2 icon-smaller" />
+                                <span class="mb-0">kebelemanagement@arada.gov.et</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="text-uppercase">Follow Us</h3>
+                    <div class="social-icons mb-3">
+                        <a href="#"><img src="../Assets/icons/facebook-brands-solid.svg" alt="" /></a>
+                        <a href="#"><img src="../Assets/icons/instagram-brands-solid.svg" alt="" /></a>
+                        <a href="#"><img src="../Assets/icons/linkedin-brands-solid.svg" alt="" /></a>
+                        <a href="#"><img src="../Assets/icons/twitter-brands-solid.svg" alt="" /></a>
+                    </div>
+                    <p class="caption">© 2025 kebelemanagement. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
