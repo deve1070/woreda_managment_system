@@ -14,13 +14,15 @@ from pathlib import Path
 import environ
 import os
 
+BASE_DIR=Path(__file__).resolve().parent.parent
+
 # Initialize environment variables
 env = environ.Env(DEBUG=(bool, False))  # Default for DEBUG is False
  
 MEDIA_ROOT =os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
 # Read the .env file
-environ.Env.read_env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Use environment variables
 SECRET_KEY = env("SECRET_KEY")
@@ -53,7 +55,6 @@ INSTALLED_APPS = [
     "services.apps.ServicesConfig",
     "residents.apps.ResidentsConfig",
     "announcements.apps.AnnouncementsConfig",
-    "auth.apps.AuthConfig",
     "debug_toolbar",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -74,7 +75,10 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "kebeleManagementSystem.urls"
+# ROOT_URLCONF = "kebeleManagementSystem.urls"
+# WSGI_APPLICATION = 'kebele_management_system.wsgi.application'
+ROOT_URLCONF = 'kebele_management_system.urls'
+
 
 TEMPLATES = [
     {
@@ -92,7 +96,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "kebeleManagementSystem.wsgi.application"
+# WSGI_APPLICATION = "kebeleManagementSystem.wsgi.application"
+WSGI_APPLICATION = 'kebele_management_system.wsgi.application'
+ROOT_URLCONF = 'kebele_management_system.urls'
+
 
 
 # Database

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if births %}
+    {% for birth in births %}
+    <ul>
+        <li>
+            <p>Child Name:{{birth.childName}}</p>
+        </li>
+        <li>
+            <p>Gender: {{birth.gender}}</p>
+        </li>
+        <li>
+        <p>Father Name:{{birth.fatherName}}</p>
+        </li>
+        <li><p>Mother Name:{{birth.motherName}}</p></li>
+        <li><small>Brith date:{{birth.birthDate}}</small></li>
+        <li><a href="{% url'download_file' request.id%}">Download</a></li>
+    </ul>
+    {% endfor %}
+    {%endif%}
+</body>
+</html>
