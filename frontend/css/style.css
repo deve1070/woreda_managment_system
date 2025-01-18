@@ -111,13 +111,17 @@ header {
     margin-top: 100px;
 }
 
+
 .card h2 {
     font-weight: 600;
     margin-bottom: 20px;
     font-size: 1.75rem;
     text-align: center;
 }
-
+.wide-card {
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
 form .row {
     display: flex;
     gap: 10px;

@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-    <link href="./css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <title>Feedback</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/header.css" />
+    <style>
+      /* Custom margin for the Submit Feedback button */
+      .submit-feedback-btn {
+        margin-bottom: 80px;
+      }
+    </style>
   </head>
   <body>
     <header class="d-flex align-items-center bg-turquoise p-3">
@@ -39,98 +44,56 @@
       </nav>
     </header>
 
-    <div id="sidebar" class="sidebar">
-      <ul class="list-unstyled">
-        <li><a href="./Home.html" class="nav-link">HOME</a></li>
-        <li><a href="./about.html" class="nav-link">ABOUT US</a></li>
-        <li><a href="./src/index.html" class="nav-link">ROUTE</a></li>
-        <li><a href="./contact.html" class="nav-link">CONTACT</a></li>
-        <li><a href="./signup.html" class="nav-link">SIGN UP</a></li>
-        <li><a href="./signin.html" class="nav-link">SIGN IN</a></li>
-      </ul>
-    </div>
-
-    <div
-      class="container d-flex justify-content-center align-items-center vh-100"
-    >
-      <div class="card shadow-lg p-4" style="width: 100%; max-width: 600px">
-        <h2 class="text-center mb-4">Sign Up</h2>
-        <form>
-          <!-- Name Row -->
-          <div class="row mb-3">
-            <div class="form-group">
-              <label for="firstName">First name *</label>
+    <div class="container mt-5">
+      <div class="text-center mb-4">
+        <h1>Feedback</h1>
+        <p class="lead">
+          We value your feedback. Please share your thoughts and suggestions
+          with us.
+        </p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
               <input
                 type="text"
                 class="form-control"
-                id="firstName"
-                placeholder="First name"
+                id="name"
+                placeholder="Enter your name"
                 required
               />
             </div>
-            <div class="form-group">
-              <label for="lastName">Last name *</label>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
               <input
-                type="text"
+                type="email"
                 class="form-control"
-                id="lastName"
-                placeholder="Last name"
+                id="email"
+                placeholder="Enter your email"
                 required
               />
             </div>
-          </div>
-
-          <!-- Phone -->
-          <div class="mb-3">
-            <label for="phone">Phone</label>
-            <input
-              type="text"
-              class="form-control"
-              id="phone"
-              placeholder="Phone"
-            />
-          </div>
-
-          <!-- Password Row -->
-          <div class="row mb-3">
-            <div class="form-group">
-              <label for="password">Password *</label>
-              <input
-                type="password"
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea
                 class="form-control"
-                id="password"
-                placeholder="Password"
+                id="message"
+                rows="5"
+                placeholder="Write your feedback here"
                 required
-              />
+              ></textarea>
             </div>
-            <div class="form-group">
-              <label for="confirmPassword">Confirm Password *</label>
-              <input
-                type="password"
-                class="form-control"
-                id="confirmPassword"
-                placeholder="Confirm Password"
-                required
-              />
-            </div>
-          </div>
-
-          <!-- Cancel and Submit -->
-          <div class="d-flex mb-3">
-            <a href="./Home.html" class="btn btn-cancel">Cancel</a>
-            <button type="submit" class="btn btn-primary ms-auto">
-              Sign Up
-            </button>
-          </div>
-
-          <!-- Login Link -->
-          <div class="text-center mt-3">
-            <small
-              >Already have an account?
-              <a href="./signin.html">Sign in</a></small
+            <!-- Button with custom margin -->
+            <button
+              type="submit"
+              class="btn btn-primary w-100 submit-feedback-btn"
             >
-          </div>
-        </form>
+              Submit Feedback
+            </button>
+          </form>
+        </div>
       </div>
     </div>
     <footer class="bg-turquoise text-white">
@@ -217,5 +180,7 @@
         </div>
       </div>
     </footer>
+
+    <!-- <script src="./js/bootstrap.min.js"></script> -->
   </body>
 </html>
