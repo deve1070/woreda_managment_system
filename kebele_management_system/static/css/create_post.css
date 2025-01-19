@@ -1,0 +1,53 @@
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and textarea styling */
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Focus effect for inputs */
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #205151;
+    box-shadow: 0 0 5px rgba(6, 241, 241, 0.5);
+}
+
+/* Label styling */
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Button styling */
+form button {
+    background-color:#227777;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+form button:hover {
+    background-color:#52b9b9;
+}

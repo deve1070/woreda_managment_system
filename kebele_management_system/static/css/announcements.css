@@ -1,0 +1,103 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Styling individual announcement posts */
+ul li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Title styling */
+ul li h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007B7D;
+}
+
+/* Text styling */
+ul li p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #3e3d3d;
+}
+
+/* Small text (date) styling */
+ul li small {
+    font-size: 0.85rem;
+    color: #585555;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Links (update and delete buttons) */
+ul li a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #007B7D;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 1px solid #0be6f6;
+    border-radius: 4px;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+ul li a:hover {
+    background-color: #007B7D;
+    color: #fff;
+}
+
+/* Image styling */
+ul li img {
+    display: block;
+    margin: 15px auto;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Video styling */
+ul li video {
+    display: block;
+    margin: 15px auto;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* No posts message */
+h3 {
+    text-align: center;
+    color: #525151;
+    font-weight: normal;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    ul li {
+        padding: 15px;
+    }
+
+    ul li h2 {
+        font-size: 1.25rem;
+    }
+
+    ul li p {
+        font-size: 0.95rem;
+    }
+
+    ul li a {
+        font-size: 0.85rem;
+        padding: 5px;
+    }
+} 
