@@ -13,14 +13,13 @@ form {
     background-color: #f9f9f9; 
 }
 
-/* Style the form labels */
+
 form label {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
 }
 
-/* Style input, textarea, and select fields */
 form input[type="text"],
 form input[type="email"],
 form input[type="file"],
@@ -35,7 +34,7 @@ form select {
     font-size: 16px; 
 }
 
-/* Style the submit button */
+
 form button,
 form input[type="submit"] {
     background-color: #227777; 
@@ -49,13 +48,13 @@ form input[type="submit"] {
     text-align: center;
 }
 
-/* Button hover effect */
+
 form button:hover,
 form input[type="submit"]:hover {
     background-color: #14bec1;
 }
 
-/* Style error messages (default Django error classes) */
+
 form .errorlist {
     color: red; 
     margin-bottom: 10px;

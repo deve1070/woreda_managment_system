@@ -21,7 +21,7 @@ button {
     transition: all 0.3s ease;
 }
 
-/* Confirm Delete Button */
+
 button[type="submit"] {
     background-color: #227777;
     color: #ffffff;
@@ -41,7 +41,7 @@ button[type="button"]:hover {
     background-color:#53e8e8;
 }
 
-/* Link styling (for cancel) */
+
 a {
     text-decoration: none;
 }

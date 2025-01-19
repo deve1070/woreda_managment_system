@@ -10,7 +10,7 @@
     color: #227777;
     text-decoration: underline;
   }
-  /* Center and style the form container */
+  
 form {
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ form label {
     width: 100%;
 }
 
-/* Style text inputs, select dropdowns, and textarea */
+
 form input[type="text"],
 form input[type="number"],
 form select,
@@ -48,7 +48,7 @@ form textarea {
     box-sizing: border-box;
 }
 
-/* Adjust textarea height */
+
 form textarea {
     resize: vertical;
     min-height: 80px;
@@ -64,7 +64,7 @@ form textarea:focus {
     box-shadow: 0 0 5px rgba(30, 224, 228, 0.5);
 }
 
-/* Submit button */
+
 form button,
 form input[type="submit"] {
     background-color: #329999;
@@ -79,13 +79,13 @@ form input[type="submit"] {
     width: 100%; 
 }
 
-/* Submit button hover effect */
+
 form button:hover,
 form input[type="submit"]:hover {
     background-color: #0df1f1; 
 }
 
-/* Error messages styling */
+
 form .errorlist {
     color: red;
     margin-bottom: 10px;
