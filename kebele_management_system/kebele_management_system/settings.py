@@ -24,6 +24,11 @@ MEDIA_URL='/media/'
 # Read the .env file
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
+
+
+
 # Use environment variables
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")

@@ -1,32 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {%block content %}
-    <form action="{url'services:mirrage'}" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit"></button>
-    </form>
-    {% if form.errors %}
-    <ul>
-        {% for field,erros in form.erros.items %}
-        <li><strong>{{field}}:</strong>
-            <ul>
-                {% for error in errors %}
-                <li>{{ error}}</li>
-                {%endfor%}
-            </ul>
-        </li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-   
-    {%endblock%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    {% block content %}
+    <title>Marriage</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <style>
+      .bg-custom {
+        background-color: #329999 !important;
+        color: white;
+      }
+      .custom-link {
+        color: #329999 !important;
+        text-decoration: none;
+      }
+      .custom-link:hover {
+        color: #227777;
+        text-decoration: underline;
+      }
+    </style>
+    {% endblock %}
+  </head>
+  <header class="d-flex align-items-center bg-turquoise p-3">
+    <a href="{% url 'home' %}">
+      <img
+        src="{% static 'assets/images/logo.png' %}"
+        alt="Logo"
+        class="img-fluid"
+        style="max-width: 80px"
+      />
+    </a>
+    <nav class="ml-auto">
+      <ul class="d-flex list-unstyled">
+        <li class="mx-3"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+        <li class="mx-3"><a href="{% url 'about' %}" class="nav-link">About us</a></li>
+        <li class="mx-3"><a href="{% url 'service' %}" class="nav-link">Services</a></li>
+        <li class="mx-3"><a href="{% url 'notification' %}" class="nav-link">Notification</a></li>
+        <li class="mx-3"><a href="{% url 'feedback' %}" class="nav-link">Feedback</a></li>
+        <li class="mx-3"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
     
+          
+  {%block content%}   
+  <div class="container mt-5">
+    <div class="text-center">
+      <h2 class="mb-4 header-color">Marriage Certificate Application Guidelines</h2>
+      <p class="text-muted">
+        To successfully apply for your Marriage Certificate, it is essential that all fields in the application form are filled out correctly. Please take your time to carefully enter your information:
+      </p>
+    </div>
+    <div class="mx-auto" style="max-width: 800px;">
+      <div class="mb-4">
+        <h5 class="header-color">Personal Information</h5>
+        <p class="text-muted">
+          Provide the full names of both individuals applying for the certificate, their date of birth, and contact details. Ensure the information matches your official documents.
+        </p>
+      </div>
+      <div class="mb-4">
+        <h5 class="header-color">Marriage Details</h5>
+        <p class="text-muted">
+          Enter the date and location of the marriage. Specify any additional details required, such as witnesses' names or officiant information, if applicable.
+        </p>
+      </div>
+      
+      <div class="mb-4">
+        <h5 class="header-color">Notification</h5>
+        <p class="text-muted">
+          Once your application is approved, you will receive a notification with further instructions. You may be requested to visit the <strong>Arada Kifleketema</strong> office to collect the Marriage Certificate.
+        </p>
+      </div>
+    </div>
+  </div>
+  {%endblock%}
+  <footer class="bg-turquoise text-white">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-md-4 text-center">
+          <a href="{% url 'home' %}">
+            <img
+              width="100px"
+              src="{% static 'assets/images/logo.png' %}"
+              alt="Logo"
+              class="img-fluid mb-3"
+            />
+          </a>
+          <p class="caption">TOGETHER WE TRIVE</p>
+        </div>
+        <div class="col-md-4">
+          <h3 class="text-uppercase">Useful Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="{% url 'home' %}" class="text-white">Home</a></li>
+            <li><a href="{% url 'about' %}" class="text-white">About Us</a></li>
+            <li><a href="{% url 'service' %}" class="text-white">Service</a></li>
+            <li><a href="{% url 'notification' %}" class="text-white">Notification</a></li>
+            <li><a href="{% url 'feedback' %}" class="text-white">Feedback</a></li>
+            <li><a href="{% url 'contact' %}" class="text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3 class="text-uppercase">Contact</h3>
+          <div class="contact-details">
+            <div class="d-flex align-items-center mb-2">
+              <img
+                src="{% static 'assets/icon/location.png' %}"
+                alt=""
+                class="me-2 icon-smaller"
+              />
+              <p class="mb-0">King George VI St, Addis Ababa, Ethiopia</p>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <a href="tel:+25100436787" class="text-white">
+                <img
+                  src="{% static 'assets/icon/call.png' %}"
+                  alt=""
+                  class="me-2 icon-smaller"
+                />
+                <span class="mb-0">+251 00 43 67 87</span>
+              </a>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <a href="mailto:kebelemanagement@arada.gov.et" class="text-white">
+                <img
+                  src="{% static 'assets/icon/mail.png' %}"
+                  alt=""
+                  class="me-2 icon-smaller"
+                />
+                <span class="mb-0">kebelemanagement@arada.gov.et</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3 class="text-uppercase">Follow Us</h3>
+          <div class="social-icons mb-3">
+            <a href="#"><img src="{% static 'assets/icon/facebook.png' %}" alt="" /></a>
+            <a href="#"><img src="{% static 'assets/icon/instagram.png' %}" alt="" /></a>
+            <a href="#"><img src="{% static 'assets/icon/instagram.png' %}" alt="" /></a>
+            <a href="#"><img src="{% static 'assets/icon/twitter.png' %}" alt="" /></a>
+          </div>
+          <p class="caption">
+            © 2025 kebelemanagement. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="{% static 'js/bootstrap.min.js.map' %}"></script>
 </body>
 </html>

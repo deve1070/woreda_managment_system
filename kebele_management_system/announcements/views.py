@@ -1,8 +1,13 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .forms import CreateAnnouncementForm,AcceptContactUSForm
 from .models import Announcement,ContactUs
+from django.http import Http404
 
 
+def base_view(request):
+    return render(request,'home.html')
+def about(request):
+    return render(request,'about.html')
 def post(request):
     if request.method=="POST":
        form=CreateAnnouncementForm(request.POST)
@@ -34,10 +39,9 @@ def updatePost(request,post_id):
 
 def deletePost(request,post_id):
     post=get_object_or_404(Announcement,id=post_id)
-    if request.method=='POST':
-        post.delete()
-        return redirect('announcements:post_list')
-
+    post.delete()
+    return redirect('announcements:posts')
+    
 
 
 def contactUs(request):

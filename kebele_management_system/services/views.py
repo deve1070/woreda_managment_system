@@ -4,7 +4,7 @@ from .models import Birth,Mirrage,IdentificationCard,Supportive
 from django.http import FileResponse,Http404,JsonResponse
 
 def index(request):
-    return render(request,'service.html')
+    return render(request,'services/index.html')
 
 
 def applyBirth(request):
@@ -14,11 +14,11 @@ def applyBirth(request):
             form.save(commit=False)
             applicant=request.user
         else:
-            return render(request,'birth.html',{'form':form})
+            return render(request,'services/birth.html',{'form':form})
     else:
         form=BirthForm()
     
-    return render(request,'birth.html',{'form':form})
+    return render(request,'services/birth.html',{'form':form})
 
 def applyMirrage(request):
     if request.method=='POST':
@@ -28,11 +28,11 @@ def applyMirrage(request):
             form.applicant=request.user
             form.save()
         else:
-            return render(request,'mirrage.html', {'form':form})
+            return render(request,'services/mirrage.html', {'form':form})
     else:
         form=MirrageForm()
     
-    return render(request,'mirrage.html',{'form':form})
+    return render(request,'services/mirrage.html',{'form':form})
 
 
 def issueId(request):
@@ -44,13 +44,13 @@ def issueId(request):
             form.save()
         
         else:
-            return render(request,'issueId.html',{'form':form})
+            return render(request,'services/issueId.html',{'form':form})
     
 
     else:
         form=IdentificatioCardForm()
 
-    return render(request,'issueId.html',{'form':form})
+    return render(request,'services/issueId.html',{'form':form})
 
 
 def supportivePaper(request):
@@ -62,10 +62,10 @@ def supportivePaper(request):
             form.save()
         
         else:
-            return render(request,'supportive.html',{'form':form})
+            return render(request,'services/supportive.html',{'form':form})
     else:
         form=SupportivePaper()
-        return render(request,'supportive.html',{'form':form})
+        return render(request,'services/supportive.html',{'form':form})
     
 
 def serviceRequest(request):
@@ -80,7 +80,7 @@ def serviceRequest(request):
         'idissues': issueId_pending_requests,
         'supportives': supportive_pending_requests
         }
-    return render(request,'serviceRequests.html',context)
+    return render(request,'services/serviceRequests.html',context)
 
 def download_file(request,file_id):
     try:

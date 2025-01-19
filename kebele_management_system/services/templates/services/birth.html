@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load static %}
+    {% block title %}
+    <title>Birth Certificate</title>
+    {% endblock %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
 </head>
 <body>
@@ -36,7 +40,165 @@
         {% endfor %}
     </ul>
     {% endif %}
-   
+  </head>
+  <body>
+    {%block content%}
+    <main>
+      <div class="container mt-5">
+        <div class="text-center">
+          <h2 class="mb-4 header-color">
+            Birth Certificate Application Guidelines
+          </h2>
+          <p class="text-muted">
+            To successfully apply for your Birth Certificate, it is essential
+            that all fields in the application form are filled out correctly.
+            Please take your time to carefully enter your information:
+          </p>
+        </div>
+        <div class="mx-auto" style="max-width: 800px">
+          <div class="mb-4">
+            <h5 class="header-color">Personal Information</h5>
+            <p class="text-muted">
+              Provide the full name of the individual whose birth certificate is
+              being requested, their date of birth, sex, and place of birth.
+              Ensure that the details match official records to avoid
+              discrepancies.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h5 class="header-color">Parent/Guardian Details</h5>
+            <p class="text-muted">
+              Enter the names of the individual's parents or guardians as they
+              appear on official documents. Include their contact details for
+              verification purposes, if required.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h5 class="header-color">Supporting Documents</h5>
+            <p class="text-muted">
+              Attach a copy of any required documents, such as proof of
+              identity, hospital records, or a previous birth certificate (if
+              applicable). Ensure the documents are clear and legible.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h5 class="header-color">Notification</h5>
+            <p class="text-muted">
+              Once your application is approved, you will receive a notification
+              with further instructions. You may be requested to visit the
+              <strong>Arada Kifleketema</strong> office to collect the Birth
+              Certificate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
     {%endblock%}
-</body>
+    <footer class="bg-turquoise text-white">
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-md-4 text-center">
+            <a href="{% static 'home.html' %}">
+              <img
+                width="100px"
+                src="{% static 'images/logo.png' %}"
+                alt="Logo"
+                class="img-fluid mb-3"
+              />
+            </a>
+            <p class="caption">TOGETHER WE TRIVE</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="text-uppercase">Useful Links</h3>
+            <ul class="list-unstyled">
+              <li>
+                <a href="{% static 'home.html' %}" class="text-white">Home</a>
+              </li>
+              <li>
+                <a href="{% static 'about.html' %}" class="text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="{% static 'service.html' %}" class="text-white"
+                  >Service</a
+                >
+              </li>
+              <li>
+                <a href="{% static 'notification.html' %}" class="text-white"
+                  >Notification</a
+                >
+              </li>
+              <li>
+                <a href="{% static 'feeback.html' %}" class="text-white"
+                  >Feedback</a
+                >
+              </li>
+              <li>
+                <a href="{% static 'contact.html' %}" class="text-white"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3 class="text-uppercase">Contact</h3>
+            <div class="contact-details">
+              <div class="d-flex align-items-center mb-2">
+                <img
+                  src="{% static 'icon/location.png' %}"
+                  alt=""
+                  class="me-2 icon-smaller"
+                />
+                <p class="mb-0">King George VI St, Addis Ababa, Ethiopia</p>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <a href="tel:+25100436787" class="text-white">
+                  <img
+                    src="{% static 'icon/call.png' %}"
+                    alt=""
+                    class="me-2 icon-smaller"
+                  />
+                  <span class="mb-0">+251 00 43 67 87</span>
+                </a>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <a
+                  href="mailto:kebelemanagement@arada.gov.et"
+                  class="text-white"
+                >
+                  <img
+                    src="{% static 'icon/mail.png' %}"
+                    alt=""
+                    class="me-2 icon-smaller"
+                  />
+                  <span class="mb-0">kebelemanagement@arada.gov.et</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3 class="text-uppercase">Follow Us</h3>
+            <div class="social-icons mb-3">
+              <a href="#"
+                ><img src="{% static 'icon/facebook.png' %}" alt=""
+              /></a>
+              <a href="#"
+                ><img src="{% static 'icon/instagram.png' %}" alt=""
+              /></a>
+              <a href="#"
+                ><img src="{% static 'icon/twitter.png' %}" alt=""
+              /></a>
+            </div>
+            <p class="caption">
+              © 2025 kebelemanagement. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static 'js/bootstrap.min.js.map' %}"></script>
+  </body>
 </html>
