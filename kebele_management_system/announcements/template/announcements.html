@@ -1,26 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Announcement</title>
-</head>
-<body>
-    {%if posts %}
-    {%block content%}
-    {%for post in posts%}
-    <li>
-        <h2>{{post.title}}</h2>
-        <p>{{post.text}}</p>
-        <small>{{post.createdAt}</small>}
-        <a href="{% url'announcements:update'post_id%}"></a>
-        <a href="{%url'announcements:delete'post_id%}"></a>
-    </li>
-    {%endfor%}
-    {%else%}
-    <h3>No new post</h3>
-    {%endif%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %} {%block content%}
+    <title>Service</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/notification.css' %}" />
+
     {%endblock%}
-    
-</body>
+  </head>
+  <body>
+    <header class="d-flex align-items-center bg-turquoise p-3">
+      <a href="{% static 'home.html' %}">
+        <img
+          src="{% static 'images/logo.png' %}"
+          alt="Logo"
+          class="img-fluid"
+          style="max-width: 80px"
+        />
+      </a>
+      <nav class="ml-auto">
+        <ul class="d-flex list-unstyled">
+          <li class="mx-3">
+            <a href="{% static 'home.html' %}" class="nav-link">Home</a>
+          </li>
+          <li class="mx-3">
+            <a href="{% static 'about.html' %}" class="nav-link">About us</a>
+          </li>
+          <li class="mx-3">
+            <a href="{% static 'service.html' %}" class="nav-link">Services</a>
+          </li>
+          <li class="mx-3">
+            <a href="{% static 'notification.html' %}" class="nav-link"
+              >Notification</a
+            >
+          </li>
+          <li class="mx-3">
+            <a href="{% static 'feeback.html' %}" class="nav-link">Feedback</a>
+          </li>
+          <li class="mx-3">
+            <a href="{% static 'contact.html' %}" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    {%block content%} {%if posts %} {%block content%} {%for post in posts%}
+    <li>
+      <h2>{{post.title}}</h2>
+      <p>{{post.text}}</p>
+      <small>{{post.createdAt}</small>}
+      <a href="{% url'announcements:update'post_id%}"></a>
+      <a href="{%url'announcements:delete'post_id%}"></a>
+    </li>
+    {%endfor%} {%else%}
+    <h3>No new post</h3>
+    {%endif%} {%endblock%}
+    <footer class="bg-turquoise text-white">
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-md-4 text-center">
+            <a href="{% static 'home.html' %}">
+              <img
+                width="100px"
+                src="{% static 'images/logo.png' %}"
+                alt="Logo"
+                class="img-fluid mb-3"
+              />
+            </a>
+            <p class="caption">TOGETHER WE TRIVE</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="text-uppercase">Useful Links</h3>
+            <ul class="list-unstyled">
+              <li>
+                <a href="{% static 'home.html' %}" class="text-white">Home</a>
+              </li>
+              <li>
+                <a href="{% static 'about.html' %}" class="text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="{% static 'service.html' %}" class="text-white"
+                  >Service</a
+                >
+              </li>
+              <li>
+                <a href="{% static 'notification.html' %}" class="text-white"
+                  >Notification</a
+                >
+              </li>
+              <li>
+                <a href="{% static 'feeback.html' %}" class="text-white"
+                  >Feedback</a
+                >
+              </li>
+              <li>
+                <a href="{% static 'contact.html' %}" class="text-white"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3 class="text-uppercase">Contact</h3>
+            <div class="contact-details">
+              <div class="d-flex align-items-center mb-2">
+                <img
+                  src="{% static 'icon/location.png' %}"
+                  alt=""
+                  class="me-2 icon-smaller"
+                />
+                <p class="mb-0">King George VI St, Addis Ababa, Ethiopia</p>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <a href="tel:+25100436787" class="text-white">
+                  <img
+                    src="{% static 'icon/call.png' %}"
+                    alt=""
+                    class="me-2 icon-smaller"
+                  />
+                  <span class="mb-0">+251 00 43 67 87</span>
+                </a>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <a
+                  href="mailto:kebelemanagement@arada.gov.et"
+                  class="text-white"
+                >
+                  <img
+                    src="{% static 'icon/mail.png' %}"
+                    alt=""
+                    class="me-2 icon-smaller"
+                  />
+                  <span class="mb-0">kebelemanagement@arada.gov.et</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3 class="text-uppercase">Follow Us</h3>
+            <div class="social-icons mb-3">
+              <a href="#"
+                ><img src="{% static 'icon/facebook.png' %}" alt=""
+              /></a>
+              <a href="#"
+                ><img src="{% static 'icon/instagram.png' %}" alt=""
+              /></a>
+              <a href="#"
+                ><img src="{% static 'icon/twitter.png' %}" alt=""
+              /></a>
+            </div>
+            <p class="caption">
+              © 2025 kebelemanagement. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static 'js/bootstrap.min.js.map' %}"></script>
+  </body>
 </html>
