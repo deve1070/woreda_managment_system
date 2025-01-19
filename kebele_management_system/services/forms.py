@@ -4,8 +4,8 @@ from .models import Birth,IdentificationCard,Mirrage,Supportive
 class BirthForm(forms.ModelForm):
     class Meta:
         model=Birth
-        fields=['childName','gender','fatherName','motherNam','birthDate',
-                'healthCertificate']
+        fields=['childName','gender','fatherName','motherName','birthDate',
+                'file']
 
 
 
@@ -29,4 +29,4 @@ class SupportivePaper(forms.Form):
             'firstName','lastName','age','kebeleId','gender','reason'
         ]
 
-  
+

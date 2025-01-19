@@ -1,0 +1,12 @@
+
+
+{% block content %}
+  <h1>Are you sure you want to delete this announcement?</h1>
+  <p>Title: {{ post.title }}</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete it</button>
+    <a href="{% url 'announcements:index' %}"><button type="button">Cancel</button></a>
+  </form>
+{% endblock %}

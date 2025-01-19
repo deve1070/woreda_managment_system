@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>update Post</title>
 </head>
 <body>
-    <form action="{% url 'announcement:create'%}" method="post">
-        {{csrf_token}}
+    <form action="{% url 'announcements:update' post_id%}">
+        {% csrf_token %}
         {{form.as_p}}
-        <button type="submit">Create A Post</button>
+        <button type="submit"></button>
     </form>
-    
 </body>
 </html>

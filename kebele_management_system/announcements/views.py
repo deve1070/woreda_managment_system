@@ -8,17 +8,17 @@ def post(request):
        form=CreateAnnouncementForm(request.POST)
        if form.is_valid():
            form.save()
-           return redirect('home.html')
+           return redirect('posts')
 
     else:
        form=CreateAnnouncementForm()
     
     context={'form':form}
-    return render(request,'create_post.html',context)
+    return render(request,'announcements/create_post.html',context)
 
 def post_list(request):
-    posts=Announcement.objects.get().order_by('-createdAt')[:5]
-    return render(request,'announcements.html', {"posts":posts})           
+    posts=Announcement.objects.all().order_by('-createdAt')[:5]
+    return render(request,'announcements/announcements.html', {"posts":posts})           
 
 
 def updatePost(request,post_id):
@@ -30,11 +30,13 @@ def updatePost(request,post_id):
     else:
         form =CreateAnnouncementForm(instance=post)
     
-    return render(request,'post_update',{'post':post})
+    return render(request,'announcements/update_post.html',{'post':post,'post_id':post_id})
 
 def deletePost(request,post_id):
-    post=Announcement.objects.get(id=post_id)
-    post.delete()
+    post=get_object_or_404(Announcement,id=post_id)
+    if request.method=='POST':
+        post.delete()
+        return redirect('announcements:post_list')
 
 
 

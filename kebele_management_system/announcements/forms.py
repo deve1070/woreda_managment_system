@@ -9,5 +9,6 @@ class CreateAnnouncementForm(forms.ModelForm):
 class AcceptContactUSForm(forms.ModelForm):
     class Meta:
         model=ContactUs
+        fields='__all__'
         
         

@@ -19,7 +19,7 @@ BASE_DIR=Path(__file__).resolve().parent.parent
 # Initialize environment variables
 env = environ.Env(DEBUG=(bool, False))  # Default for DEBUG is False
  
-MEDIA_ROOT =os.path.join(BASE_DIR,'media')
+MEDIA_ROOT =os.path.join(BASE_DIR,'/home/dawit/Videos/assets')
 MEDIA_URL='/media/'
 # Read the .env file
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
@@ -83,7 +83,8 @@ ROOT_URLCONF = 'kebele_management_system.urls'
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        # "DIRS": [],
+        "DIRS":[BASE_DIR/'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
