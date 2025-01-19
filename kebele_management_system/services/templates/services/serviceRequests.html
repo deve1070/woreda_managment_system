@@ -1,6 +1,12 @@
-{% extends 'base.html' %} {% load static %} {% block title %}
-<title>Announcement</title>
-{% endblock %} {% block link %} {% endblock %} {% if births %} {% for birth in
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %}
+<title>service request</title>
+{% endblock %} 
+{% block link %} 
+{% endblock %} 
+{% if births %} 
+{% for birth in
 births %}
 <ul>
   <li>
@@ -16,4 +22,6 @@ births %}
   <li><small>Brith date:{{birth.birthDate}}</small></li>
   <li><a href="{% url'download_file' request.id%}">Download</a></li>
 </ul>
-{% endfor %} {%endif%} {% endblock %}
+{% endfor %} 
+{%endif%} 
+{% endblock %}

@@ -1,0 +1,88 @@
+.bg-custom {
+    background-color: #329999 !important;
+    color: white;
+  }
+  .custom-link {
+    color: #329999 !important;
+    text-decoration: none;
+  }
+  .custom-link:hover {
+    color: #227777;
+    text-decoration: underline;
+  }
+  /* Center the form container on the page */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form labels */
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+/* Style text inputs, number inputs, and select dropdown */
+form input[type="text"],
+form input[type="number"],
+form select {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Focus and hover effects for input fields */
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus {
+    border-color: #227777;
+    outline: none;
+    box-shadow: 0 0 5px rgba(10, 199, 199, 0.5);
+}
+
+/* Submit button */
+form button,
+form input[type="submit"] {
+    background-color: #227777;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%; 
+}
+
+/* Submit button hover effect */
+form button:hover,
+form input[type="submit"]:hover {
+    background-color: #227777; 
+}
+
+/* Error messages styling */
+form .errorlist {
+    color: red;
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+

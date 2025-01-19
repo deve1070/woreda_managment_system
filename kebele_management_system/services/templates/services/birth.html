@@ -1,14 +1,11 @@
 {% extends 'base.html' %} 
-{% load static %} 
-
+{% load static %}
 {% block title %}
 <title>Apply for Birth Certificate</title>
-{% endblock %}
-
+{% endblock %} 
 {% block link %}
-<!-- Add any additional links or CSS files if needed -->
-{% endblock %}
-
+<link rel="stylesheet" href="{% static 'css/birth.css' %}" />
+{% endblock %} 
 {% block content %}
 <main>
   <div class="container mt-5">
@@ -59,9 +56,8 @@
     </div>
   </div>
   <form action="" method="post">
-  {% csrf_token %}
-  {{form.as_p}}
-  <button type="submit">Apply for Birth Certificate</button>
+    {% csrf_token %} {{form.as_p}}
+    <button type="submit">Apply for Birth Certificate</button>
   </form>
 </main>
 {% endblock %}

@@ -1,16 +1,13 @@
-{% extends 'base.html' %}
-{% load static %}
-
+{% extends 'base.html' %} 
+{% load static %} 
 {% block title %}
 <title>Announcement</title>
-{% endblock %}
-
+{% endblock %} 
 {% block link %}
-<!-- Add additional CSS or links here if needed -->
-{% endblock %}
-
+<link rel="stylesheet" href="{% static 'css/announcements.css' %}" />
+{% endblock %} 
 {% block content %}
-{% if posts %}
+ {% if posts %}
 <ul>
   {% for post in posts %}
   <li>
@@ -22,9 +19,7 @@
 
     {% if post.image %}
     <img src="{{ post.image.url }}" alt="Post image" width="500" />
-    {% endif %}
-
-    {% if post.video %}
+    {% endif %} {% if post.video %}
     <video width="640" height="360" controls>
       <source src="{{ post.video.url }}" type="video/mp4" />
       Your browser does not support the video tag.
@@ -36,4 +31,4 @@
 {% else %}
 <h3>No new posts</h3>
 {% endif %}
-{% endblock %}
+ {% endblock %}
