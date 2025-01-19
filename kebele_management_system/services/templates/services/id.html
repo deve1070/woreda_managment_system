@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% load static %}
     {% block content %}
-    <title>Marriage</title>
+    <title>Service</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/header.css' %}" />
@@ -45,39 +45,44 @@
       </ul>
     </nav>
   </header>
-    
-          
-  {%block content%}   
+
+  {% block content %}
   <div class="container mt-5">
     <div class="text-center">
-      <h2 class="mb-4 header-color">Marriage Certificate Application Guidelines</h2>
+      <h2 class="mb-4 header-color">Kebele ID Application Guidelines</h2>
       <p class="text-muted">
-        To successfully apply for your Marriage Certificate, it is essential that all fields in the application form are filled out correctly. Please take your time to carefully enter your information:
+        To successfully apply for your Kebele ID, it is essential that all fields in the application form are filled out correctly. Please take your time to carefully enter your information:
       </p>
     </div>
     <div class="mx-auto" style="max-width: 800px;">
       <div class="mb-4">
         <h5 class="header-color">Personal Information</h5>
         <p class="text-muted">
-          Provide the full names of both individuals applying for the certificate, their date of birth, and contact details. Ensure the information matches your official documents.
+          Provide your full name, date of birth, sex, age, and contact details accurately. Ensure the spelling of your name matches your official documents.
         </p>
       </div>
       <div class="mb-4">
-        <h5 class="header-color">Marriage Details</h5>
+        <h5 class="header-color">Address Details</h5>
         <p class="text-muted">
-          Enter the date and location of the marriage. Specify any additional details required, such as witnesses' names or officiant information, if applicable.
+          Enter your house number accurately. Any missing or incorrect information may cause delays in processing.
         </p>
       </div>
-      
+      <div class="mb-4">
+        <h5 class="header-color">Supporting Documents</h5>
+        <p class="text-muted">
+          If the application requires document uploads, make sure the files are clear, properly scanned, and in the required format.
+        </p>
+      </div>
       <div class="mb-4">
         <h5 class="header-color">Notification</h5>
         <p class="text-muted">
-          Once your application is approved, you will receive a notification with further instructions. You may be requested to visit the <strong>Arada Kifleketema</strong> office to collect the Marriage Certificate.
+          If your application is approved, you will receive a notification with further instructions. You will be requested to visit the <strong>Arada Kifleketema</strong> office to finalize the process and collect your Kebele ID.
         </p>
       </div>
     </div>
   </div>
-  {%endblock%}
+  {% endblock %}
+  
   <footer class="bg-turquoise text-white">
     <div class="container">
       <div class="row py-5">
