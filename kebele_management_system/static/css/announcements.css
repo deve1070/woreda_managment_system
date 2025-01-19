@@ -12,7 +12,7 @@ ul li p {
     color: #3e3d3d;
 }
 
-/* Small text (date) styling */
+
 ul li small {
     font-size: 0.85rem;
     color: #585555;
@@ -24,7 +24,6 @@ ul li small {
 ul li a {
     display: inline-block;
     margin-right: 10px;
-    color: #007B7D;
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9rem;
