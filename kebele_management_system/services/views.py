@@ -40,7 +40,7 @@ def issueId(request):
         form=IdentificatioCardForm(request.POST)
         if form.is_valid():
             form.save(commit=False)
-            form.applicant=request.user
+            # form.applicant=request.user
             form.save()
         
         else:

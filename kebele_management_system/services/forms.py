@@ -9,7 +9,7 @@ class BirthForm(forms.ModelForm):
 
 
 
-class IdentificatioCardForm(forms.Form):
+class IdentificatioCardForm(forms.ModelForm):
     class Meta:
         model=IdentificationCard
         fields=[
@@ -17,14 +17,15 @@ class IdentificatioCardForm(forms.Form):
         ]
        
 
-class MirrageForm(forms.Form):
+class MirrageForm(forms.ModelForm):
     class Meta:
         model=Mirrage
         fields=[
             'groomName','brideName','widdingDate']
   
-class SupportivePaper(forms.Form):
+class SupportivePaper(forms.ModelForm):
     class Meta:
+        model=Supportive
         fields=[
             'firstName','lastName','age','kebeleId','gender','reason'
         ]

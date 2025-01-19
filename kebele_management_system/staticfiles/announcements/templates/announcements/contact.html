@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block title %}
+<title>Contact Us - Arada Kifleketema Wereda 6 Kebele</title>
+{% endblock %} 
+
+{% block link %}
+<!-- Add any additional links or CSS files if needed -->
+{% endblock %} 
+
+{% block content %}
+<form action="{% url 'announcements:contact' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+{% endblock %}

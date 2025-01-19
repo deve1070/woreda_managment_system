@@ -1,51 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% load static %}
-    {% block content %}
-    <title>Supportive Document</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
-    <style>
-      .bg-custom {
-        background-color: #329999 !important;
-        color: white;
-      }
-      .custom-link {
-        color: #329999 !important;
-        text-decoration: none;
-      }
-      .custom-link:hover {
-        color: #227777;
-        text-decoration: underline;
-      }
-    </style>
-    {% endblock %}
-  </head>
-  <header class="d-flex align-items-center bg-turquoise p-3">
-    <a href="{% url 'home' %}">
-      <img
-        src="{% static 'assets/images/logo.png' %}"
-        alt="Logo"
-        class="img-fluid"
-        style="max-width: 80px"
-      />
-    </a>
-    <nav class="ml-auto">
-      <ul class="d-flex list-unstyled">
-        <li class="mx-3"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
-        <li class="mx-3"><a href="{% url 'about' %}" class="nav-link">About us</a></li>
-        <li class="mx-3"><a href="{% url 'service' %}" class="nav-link">Services</a></li>
-        <li class="mx-3"><a href="{% url 'notification' %}" class="nav-link">Notification</a></li>
-        <li class="mx-3"><a href="{% url 'feedback' %}" class="nav-link">Feedback</a></li>
-        <li class="mx-3"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  {%block content%}
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %}
+<title>Apply for supportive document</title>
+{% endblock %} 
+{% block link %} 
+{% endblock %}
+{%block content%}
+<main>
   <div class="container mt-5">
     <div class="text-center">
       <h2 class="mb-4 header-color">Supportive Letter Application Guidelines</h2>
@@ -97,91 +58,12 @@
       </div>
     </div>
   </div>
-  {%endblock%}
-          <footer class="bg-turquoise text-white">
-        <div class="container">
-          <div class="row py-5">
-            <div class="col-md-4 text-center">
-              <a href="./home.html">
-                <img
-                  width="100px"
-                  src="./assets/images/logo.png"
-                  alt="Logo"
-                  class="img-fluid mb-3"
-                />
-              </a>
-              <p class="caption">TOGETHER WE TRIVE</p>
-            </div>
-            <div class="col-md-4">
-              <h3 class="text-uppercase">Useful Links</h3>
-              <ul class="list-unstyled">
-                <li><a href="./home.html" class="text-white">Home</a></li>
-                <li><a href="./about.html" class="text-white">About Us</a></li>
-                <li>
-                  <a href="./service.html" class="text-white">Service</a>
-                </li>
-                <li>
-                  <a href="./notification.html" class="text-white"
-                    >Notification</a
-                  >
-                </li>
-                <li><a href="./feeback.html" class="text-white">Feedback</a></li>
-                <li><a href="./contact.html" class="text-white">Contact</a></li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <h3 class="text-uppercase">Contact</h3>
-              <div class="contact-details">
-                <div class="d-flex align-items-center mb-2">
-                  <img
-                    src="./assets/icon/location.png"
-                    alt=""
-                    class="me-2 icon-smaller"
-                  />
-                  <p class="mb-0">King George VI St, Addis Ababa, Ethiopia</p>
-                </div>
-                <div class="d-flex align-items-center mb-2">
-                  <a href="tel:+25100436787" class="text-white">
-                    <img
-                      src="./assets/icon/call.png"
-                      alt=""
-                      class="me-2 icon-smaller"
-                    />
-                    <span class="mb-0">+251 00 43 67 87</span>
-                  </a>
-                </div>
-                <div class="d-flex align-items-center mb-2">
-                  <a
-                    href="mailto:kebelemanagement@arada.gov.et"
-                    class="text-white"
-                  >
-                    <img
-                      src="./assets/icon/mail.png"
-                      alt=""
-                      class="me-2 icon-smaller"
-                    />
-                    <span class="mb-0">kebelemanagement@arada.gov.et</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h3 class="text-uppercase">Follow Us</h3>
-              <div class="social-icons mb-3">
-                <a href="#"><img src="./assets/icon/facebook.png" alt="" /></a>
-                <a href="#"><img src="./assets/icon/instagram.png" alt="" /></a>
-                <a href="#"><img src="./assets/icon/instagram.png" alt="" /></a>
-                <a href="#"><img src="./assets/icon/twitter.png" alt="" /></a>
-              </div>
-              <p class="caption">
-                © 2025 kebelemanagement. All Rights Reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-  <script src="./js/bootstrap.min.js.map"></script>
-  </body>
-</html>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Apply for Supportive Paper</button>
+  </form>
+</main>
+ 
+   {%endblock%}
+          
