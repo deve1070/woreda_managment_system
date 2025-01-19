@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/staticfiles/css">
     {% load static %}
     {% block title %}
     <title>Home</title>
     {% endblock %}
+    {% block link %}
+    {% endblock %}
+    <link rel="stylesheet" href="staticfiles/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/staticfiles/css/header.css" />
+    <link rel="stylesheet" href="/staticfiles/css/sytle.css">
   </head>
   <body>
     <header class="d-flex align-items-center bg-turquoise p-3">
@@ -110,4 +114,5 @@
       </div>
     </footer>
   </body>
+  <script src="/kebele_management_system/staticfiles/js/bootstrap.min.js"></script>
 </html>
