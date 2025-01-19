@@ -1,11 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>I am Dawit </h1>
-</body>
-</html>
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>Announcement</title>
+{% endblock %} {% block link %} {% endblock %} {% block content %}
+<div class="container mt-5">
+  <div class="card wide-card shadow">
+    <div class="card-header text-center bg-custom text-white" id="header1">
+      <h2>Kebele Management System Services</h2>
+    </div>
+    <div class="card-body">
+      <p class="text-muted">
+        The ID Application service is a streamlined solution designed to assist
+        residents in obtaining their official Kebele ID with ease. This service
+        eliminates the need for lengthy queues and manual processes by offering
+        a convenient, user-friendly platform where residents can submit their
+        applications online. It ensures that all required details are accurately
+        captured, reducing errors and saving time. Additionally, applicants can
+        track the status of their requests, ensuring transparency and improving
+        overall efficiency. Our goal is to provide every resident with
+        hassle-free access to their Kebele ID, empowering communities with
+        faster, more reliable service delivery.
+      </p>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h5>
+            <a
+              href="{% url'services:issueId' %}"
+              class="custom-link"
+              id="anchor"
+              >ID Application</a
+            >
+          </h5>
+          <p class="mb-0 text-muted">
+            Apply for a Kebele ID quickly and easily. Provide the required
+            details to get your ID issued without hassle.
+          </p>
+          <a
+            href="{% url'services:issueId' %}"
+            class="btn btn-primary mt-2 w-100"
+            >Apply For ID</a
+          >
+        </li>
+        <li class="list-group-item">
+          <h5>
+            <a href="{% url'services:birth' %}" class="custom-link"
+              >Birth Certificate</a
+            >
+          </h5>
+          <p class="mb-0 text-muted">
+            Apply for a birth certificate conveniently from your home. Fill out
+            the form with the required information and submit your request.
+          </p>
+          <a href="{% url'services:birth' %}" class="btn btn-primary mt-2 w-100"
+            >Apply For Birth Certificate</a
+          >
+        </li>
+        <li class="list-group-item">
+          <h5>
+            <a href="{% url'services:mirrage' %}" class="custom-link"
+              >Marriage Certificate</a
+            >
+          </h5>
+          <p class="mb-0 text-muted">
+            Officially register your marriage and obtain a certificate with
+            ease. This form streamlines the application process for married
+            couples.
+          </p>
+          <a
+            href="{% url'services:mirrage' %}"
+            class="btn btn-primary mt-2 w-100"
+            >Apply For Marriage Certificate</a
+          >
+        </li>
+        <li class="list-group-item">
+          <h5>
+            <a href="{% url'services:supportivepaper' %}" class="custom-link"
+              >Supportive Letter</a
+            >
+          </h5>
+          <p class="mb-0 text-muted">
+            Need a supportive letter for employment or other purposes? Complete
+            the form, and we’ll process your request promptly.
+          </p>
+          <a
+            href="{% url'services:supportivepaper' %}"
+            class="btn btn-primary mt-2 w-100"
+            >Apply For Supportive Letter</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="card-footer text-center text-muted">
+      Empowering communities through streamlined digital services.
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <form action="{% url 'announcements:create'%}" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Create A Post</button>
-    </form>
-    
-</body>
-</html>
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>create post</title>
+{% endblock %} {% block link %} {% endblock %} {% block content %}
+<form action="{% url 'announcements:create'%}" method="post">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit">Create A Post</button>
+</form>
+{% endblock %}

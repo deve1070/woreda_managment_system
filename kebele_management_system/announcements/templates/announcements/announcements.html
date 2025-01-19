@@ -1,36 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Announcement</title>
-</head>
-<body>
-    {% if posts %}
-        <ul>
-            {% for post in posts %}
-                <li>
-                    <h2>{{ post.title }}</h2>
-                    <p>{{ post.text }}</p>
-                    <small>{{ post.createdAt }}</small>
-                    <a href="{% url 'announcements:update' post_id=post.id %}">Update Post</a>
-                    <a href="{% url 'announcements:delete' post_id=post.id %}">Delete Post</a>
-                    
-                    {% if post.image %}
-                    <img src="{{post.image.url}}" alt="" width="500">
-                    {% endif%}
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>Announcement</title>
+{% endblock %} {% block link %} {% endblock %} {% block content %} {% if posts
+%}
+<ul>
+  {% for post in posts %}
+  <li>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.text }}</p>
+    <small>{{ post.createdAt }}</small>
+    <a href="{% url 'announcements:update' post_id=post.id %}">Update Post</a>
+    <a href="{% url 'announcements:delete' post_id=post.id %}">Delete Post</a>
 
-                    {% if postl.video %}
-                    <video src="" width="640" height="360" controls>
-                        <source src="{{post.video.url}}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <h3>No new posts</h3>
+    {% if post.image %}
+    <img src="{{post.image.url}}" alt="" width="500" />
+    {% endif%} {% if postl.video %}
+    <video src="" width="640" height="360" controls>
+      <source src="{{post.video.url}}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
     {% endif %}
-</body>
-</html>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<h3>No new posts</h3>
+{% endif %} {% endblock %}
