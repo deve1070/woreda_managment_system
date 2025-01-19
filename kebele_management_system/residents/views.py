@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login
 from .forms import RegistrationForm
-from .models import ResidentialID,Profile
+from .models import ResidentialID,Profile,FeedBack
 
 
 def my_login_view(request):
@@ -39,4 +39,14 @@ def register(request):
         form = RegistrationForm()
 
     return render(request, 'registration/register.html', {'form': form})
+
+def giveFeedBack(request):
+    if request.method=="POST":
+        form=FeedBack(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form=FeedBack()
+    
+    return render(request,'residents/feedback.html',{'form':form})
 

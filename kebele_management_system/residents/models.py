@@ -32,3 +32,7 @@ class CustomUser(AbstractUser):
     user_permissions = models.ManyToManyField(
         'auth.Permission', related_name='customuser_permissions', blank=True, help_text='Specific permissions for this user.'
     )
+
+class FeedBack(models.Model):
+    department =models.CharField(max_length=20)
+    message=models.TextField()
