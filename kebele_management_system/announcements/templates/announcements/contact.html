@@ -1,25 +1,29 @@
 {% extends 'base.html' %} 
-{% load static %} 
-
+{% load static %}
 {% block title %}
 <title>Contact Us - Arada Kifleketema Wereda 6 Kebele</title>
-{% endblock %} 
-
+{% endblock %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" />
 {% block link %}
 <!-- Add any additional links or CSS files if needed -->
 {% endblock %} 
-
 {% block content %}
 <div class="row">
   <div class="col-md-6">
     <h5>Contact Information</h5>
     <p><strong>Phone:</strong> +251 00 43 67 87</p>
-    <p><strong>Email:</strong> <a href="mailto:support@travel-link.com" class="text-dark">support@kebelemanagement@arada.gov.et</a></p>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:support@travel-link.com" class="text-dark"
+        >support@kebelemanagement@arada.gov.et</a
+      >
+    </p>
     <p><strong>Address:</strong> 123 Main Street, Hometown, State, 12345</p>
   </div>
-<form action="{% url 'announcements:contact' %}" method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit" class="btn btn-primary mt-3">Submit</button>
-</form>
-{% endblock %}
+  <form action="{% url 'announcements:contact' %}" method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>
+</div>
+  {% endblock %}
+

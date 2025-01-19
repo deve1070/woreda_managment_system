@@ -1,23 +1,20 @@
 {% extends 'base.html' %} 
 {% load static %} 
-
 {% block title %}
 <title>Announcement</title>
-{% endblock %}
-
-{% block link %}
-<!-- Add any additional links or CSS files if needed -->
 {% endblock %} 
-
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/id.css' %}" />
+{% endblock %} 
 {% block content %}
 <main>
   <div class="container mt-5">
     <div class="text-center">
       <h2 class="mb-4 header-color">Kebele ID Application Guidelines</h2>
       <p class="text-muted">
-        To successfully apply for your Kebele ID, it is essential that all fields
-        in the application form are filled out correctly. Please take your time to
-        carefully enter your information:
+        To successfully apply for your Kebele ID, it is essential that all
+        fields in the application form are filled out correctly. Please take
+        your time to carefully enter your information:
       </p>
     </div>
     <div class="mx-auto" style="max-width: 800px">
@@ -32,8 +29,8 @@
       <div class="mb-4">
         <h5 class="header-color">Address Details</h5>
         <p class="text-muted">
-          Enter your house number accurately. Any missing or incorrect information
-          may cause delays in processing.
+          Enter your house number accurately. Any missing or incorrect
+          information may cause delays in processing.
         </p>
       </div>
       <div class="mb-4">
@@ -54,12 +51,10 @@
       </div>
     </div>
   </div>
-  
+
   <form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Apply for ID</button> 
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Apply for ID</button>
   </form>
 </main>
 {% endblock %}
-

@@ -1,6 +1,12 @@
-{% extends 'base.html' %} {% load static %} {% block title %}
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %}
 <title>create post</title>
-{% endblock %} {% block link %} {% endblock %} {% block content %}
+{% endblock %}
+<link rel="stylesheet" href="{% static 'css/create_post.css' %}" />
+{% block link
+%} {% endblock %}
+ {% block content %}
 <form action="{% url 'announcements:create'%}" method="post">
   {% csrf_token %} {{form.as_p}}
   <button type="submit">Create A Post</button>
