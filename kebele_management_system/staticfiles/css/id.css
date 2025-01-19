@@ -1,0 +1,96 @@
+.bg-custom {
+    background-color: #329999 !important;
+    color: white;
+  }
+  .custom-link {
+    color: #329999 !important;
+    text-decoration: none;
+  }
+  .custom-link:hover {
+    color: #227777;
+    text-decoration: underline;
+  }
+  /* Center the form container on the page */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px; /* Adjust maximum width */
+    border: 1px solid #ddd; /* Optional border for styling */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Form labels */
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+/* Style text inputs, number inputs, and select dropdown */
+form input[type="text"],
+form input[type="number"],
+form select {
+    width: 100%; /* Full width of the form container */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Focus and hover effects for input fields */
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus {
+    border-color: #007bff; /* Blue outline */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit button */
+form button,
+form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%; /* Make button as wide as the form */
+}
+
+/* Submit button hover effect */
+form button:hover,
+form input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+/* Error messages styling */
+form .errorlist {
+    color: red;
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+/* Optional: Center the form vertically on the page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f3f4f6; /* Light gray background */
+}

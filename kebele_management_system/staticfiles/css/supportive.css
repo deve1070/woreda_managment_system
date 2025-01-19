@@ -1,0 +1,104 @@
+.bg-custom {
+    background-color: #329999 !important;
+    color: white;
+  }
+  .custom-link {
+    color: #329999 !important;
+    text-decoration: none;
+  }
+  .custom-link:hover {
+    color: #227777;
+    text-decoration: underline;
+  }
+  /* Center and style the form container */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 500px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Form labels */
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+/* Style text inputs, select dropdowns, and textarea */
+form input[type="text"],
+form input[type="number"],
+form select,
+form textarea {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Adjust textarea height */
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #007bff; 
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit button */
+form button,
+form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%; 
+}
+
+/* Submit button hover effect */
+form button:hover,
+form input[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+/* Error messages styling */
+form .errorlist {
+    color: red;
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f3f4f6; 
+}

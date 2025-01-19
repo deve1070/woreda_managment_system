@@ -1,0 +1,22 @@
+.bg-custom {
+    background-color: #329999 !important;
+    color: white;
+  }
+  .custom-link {
+    color: #329999 !important;
+    text-decoration: none;
+  }
+  .custom-link:hover {
+    color: #227777;
+    text-decoration: underline;
+  }
+  .btn:active {
+      background-color: #329999 !important;  /* Button background when clicked */
+      border-color: #329999 !important;      /* Border color when clicked */
+    }
+    
+    /* Optional: Style the button when hovered */
+    .btn:hover {
+      background-color: #329999;  /* Button background on hover */
+      border-color: #329999;      /* Border color on hover */
+    }
