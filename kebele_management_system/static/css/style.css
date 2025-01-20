@@ -28,7 +28,9 @@ header {
     z-index: 10;
     left: 1250px; 
   }
-  
+  .button-group{
+    margin-bottom: 16px;
+  }
  .btn-outline-primary{
     background-color: #007B7D;
     color: #FFFFFF;

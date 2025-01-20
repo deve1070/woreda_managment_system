@@ -7,7 +7,7 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Input and textarea styling */
+
 form input,
 form textarea,
 form select {
@@ -19,7 +19,7 @@ form select {
     font-size: 1rem;
 }
 
-/* Focus effect for inputs */
+
 form input:focus,
 form textarea:focus,
 form select:focus {
@@ -28,14 +28,14 @@ form select:focus {
     box-shadow: 0 0 5px rgba(6, 241, 241, 0.5);
 }
 
-/* Label styling */
+
 form label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
 
-/* Button styling */
+
 form button {
     background-color:#227777;
     color: #ffffff;
@@ -47,7 +47,7 @@ form button {
     transition: all 0.3s ease;
 }
 
-/* Button hover effect */
+
 form button:hover {
     background-color:#52b9b9;
 }

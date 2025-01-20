@@ -3,6 +3,7 @@ from django.dispatch import receiver
 from django.contrib.auth.models import User,Group,Permission
 from .models import Profile,CustomUser
 from django.contrib.contenttypes.models import ContentType
+from django.db import IntegrityError
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
@@ -10,14 +11,26 @@ def create_user_profile(sender, instance, created, **kwargs):
         Profile.objects.create(user=instance)
 @receiver(post_save, sender=CustomUser)
 def save_user_profile(sender, instance, created, **kwargs):
-    if created:
-        # Create a Profile only if the user is a resident
-        if instance.role == 'resident':
-            Profile.objects.create(user=instance)
-    else:
-        # Ensure the profile exists before attempting to save it
-        if hasattr(instance, 'profile'):
-            instance.profile.save()
+    try:
+        if created:
+            # Create a Profile only if the user is a resident
+            if instance.role == 'resident':
+                profile = Profile.objects.create(user=instance)
+                
+                # Check if the residential ID exists and update it
+                if instance.residential_id:
+                    profile.residential_id = instance.residential_id
+                    profile.save()
+        else:
+            # Ensure the profile is updated if the user is updated (if needed)
+            if hasattr(instance, 'profile') and instance.residential_id:
+                instance.profile.residential_id = instance.residential_id
+                instance.profile.save()
+    except IntegrityError as e:
+        # Log the error or handle it accordingly
+        print(f"IntegrityError occurred: {e}")
+        # Optionally, you could also re-raise the error or handle it gracefully
+        raise IntegrityError("Failed to save profile due to foreign key constraint.")
 
 
 @receiver(post_migrate)

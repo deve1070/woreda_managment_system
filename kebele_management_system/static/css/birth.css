@@ -10,7 +10,7 @@
     color: #227777;
     text-decoration: underline;
   }
-  /* Center the form container on the page */
+
 form {
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ form label {
     width: 100%;
 }
 
-/* Style text inputs, file input, and date picker */
+
 form input[type="text"],
 form input[type="date"],
 form input[type="file"],

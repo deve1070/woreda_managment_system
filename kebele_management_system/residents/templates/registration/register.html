@@ -1,6 +1,8 @@
-<h2>Register</h2>
 <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if form.residential_id.errors %}
+    <div class="error">{{ form.residential_id.errors }}</div>
+  {% endif %}
+  <button type="submit">Register</button>
 </form>

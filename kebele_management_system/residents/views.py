@@ -29,6 +29,10 @@ def custom_login(request):
         form = AuthenticationForm()
 
     return render(request, 'registration/login.html', {'form': form})
+from django.shortcuts import render, redirect
+from .forms import RegistrationForm
+from .models import Profile, ResidentialID
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -40,15 +44,28 @@ def register(request):
 
             # Handle the residential ID
             residential_id = form.cleaned_data['residential_id']
-            Profile.objects.filter(user=user).update(residential_id=residential_id)
-            ResidentialID.objects.filter(id_number=residential_id).update(used=True)
+            
+            # Check if the residential_id is already used
+            residential_id_obj = ResidentialID.objects.filter(id_number=residential_id).first()
+            if residential_id_obj and residential_id_obj.used:
+                form.add_error('residential_id', 'This residential ID has already been used.')
+                return render(request, 'registration/register.html', {'form': form})
 
-            # Redirect to login page
-            return redirect('login')
+            # Update the Profile with the residential ID
+            Profile.objects.filter(user=user).update(residential_id=residential_id)
+            
+            # Mark the residential ID as used
+            if residential_id_obj:
+                residential_id_obj.used = True
+                residential_id_obj.save()
+
+            # Redirect to home page after successful registration
+            return redirect('home')
     else:
         form = RegistrationForm()
 
     return render(request, 'registration/register.html', {'form': form})
+
 
 def giveFeedBack(request):
     if request.method=="POST":

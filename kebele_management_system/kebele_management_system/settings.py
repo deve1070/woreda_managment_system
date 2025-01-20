@@ -169,4 +169,7 @@ LOGIN_URL='/residents/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL='residents/login'
 AUTH_USER_MODEL = 'residents.CustomUser'
+CSRF_TRUSTED_ORIGINS = [
+    'https://yourfrontenddomain.com',
+]
 

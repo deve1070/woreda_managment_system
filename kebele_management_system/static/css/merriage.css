@@ -33,7 +33,7 @@ form label {
     width: 100%;
 }
 
-/* Style text inputs and date picker */
+
 form input[type="text"],
 form input[type="date"] {
     width: 100%; 
@@ -45,7 +45,7 @@ form input[type="date"] {
     box-sizing: border-box;
 }
 
-/* Focus and hover effects for input fields */
+
 form input[type="text"]:focus,
 form input[type="date"]:focus {
     border-color: #227777; 
@@ -53,7 +53,7 @@ form input[type="date"]:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Submit button */
+
 form button,
 form input[type="submit"] {
     background-color: #227777;
@@ -68,13 +68,13 @@ form input[type="submit"] {
     width: 100%; 
 }
 
-/* Submit button hover effect */
+
 form button:hover,
 form input[type="submit"]:hover {
     background-color: #3a9b9b; 
 }
 
-/* Error messages styling */
+
 form .errorlist {
     color: red;
     margin-bottom: 10px;
