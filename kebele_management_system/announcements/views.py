@@ -2,12 +2,14 @@ from django.shortcuts import render,redirect,get_object_or_404
 from .forms import CreateAnnouncementForm,AcceptContactUSForm
 from .models import Announcement,ContactUs
 from django.http import Http404
+from .decorators import role_required
 
 
 def base_view(request):
     return render(request,'home.html')
 def about(request):
     return render(request,'about.html')
+@role_required('staff') 
 def post(request):
     if request.method=="POST":
        form=CreateAnnouncementForm(request.POST)
@@ -25,7 +27,7 @@ def post_list(request):
     posts=Announcement.objects.all().order_by('-createdAt')[:5]
     return render(request,'announcements/announcements.html', {"posts":posts})           
 
-
+@role_required('staff') 
 def updatePost(request,post_id):
     post=get_object_or_404(Announcement,id=post_id)
     if request.method =="POST":
@@ -36,7 +38,7 @@ def updatePost(request,post_id):
         form =CreateAnnouncementForm(instance=post)
     
     return render(request,'announcements/update_post.html',{'post':post,'post_id':post_id})
-
+@role_required('staff') 
 def deletePost(request,post_id):
     post=get_object_or_404(Announcement,id=post_id)
     post.delete()
