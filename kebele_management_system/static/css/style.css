@@ -28,6 +28,9 @@ header {
     z-index: 10;
     left: 1250px; 
   }
+  .btn{
+    margin-bottom: 32px;
+  }
   .button-group{
     margin-bottom: 16px;
   }
