@@ -6,8 +6,8 @@
 {% block link %}
 <link rel="stylesheet" href="{% static 'css/create_post.css' %}" />
 {% endblock %}
-{% block content %}
-{% endblock %}
+{% comment %} {% block content %}
+{% endblock %} {% endcomment %}
 {% block content %}
 <form action="{% url 'announcements:create'%}" method="post">
   {% csrf_token %} {{form.as_p}}

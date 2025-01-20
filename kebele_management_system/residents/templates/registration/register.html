@@ -1,3 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Contact Us - Arada Kifleketema Wereda 6 Kebele</title>
+{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+{% endblock %} 
+{% block content %}
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
@@ -6,3 +15,4 @@
   {% endif %}
   <button type="submit">Register</button>
 </form>
+{% endblock %} 
