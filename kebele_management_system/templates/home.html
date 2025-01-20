@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
-    {% load static %}
-    {% block title %}
-    <title>Home</title>
-    {% endblock %}
-    {% block content %}
+{% load static %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+{% block link %}
+{% endblock %}
+{% block content %}
+<li class="mx-3" id="profileMenu" style="display:none;">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <span id="profiileInitial"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+        <li><a class="dropdown-item" href="./profile.html">View Profile</a></li>
+        <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
+
+      </ul>
+    </li>
+{% endblock %}
+{% block content %}
     <main>
       <section class="hero">
         <div class="hero-content">

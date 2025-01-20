@@ -2,10 +2,13 @@
 {% load static %}
  {% block title %}
 <title>update post</title>
-{% block link %}
 {% endblock %}
-<link rel="stylesheet" href="{% static 'css/create_post.css' %}" />  {% endblock %}
- {% block content %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/create_post.css' %}" />  
+{% endblock %}
+{% block content %}
+{% endblock %}
+{% block content %}
 <form action="{% url 'announcements:update' post_id%}">
   {% csrf_token %} {{form.as_p}}
   <button type="submit">Update</button>
