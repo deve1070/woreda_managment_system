@@ -8,10 +8,16 @@ from django.contrib.contenttypes.models import ContentType
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+@receiver(post_save, sender=CustomUser)
+def save_user_profile(sender, instance, created, **kwargs):
+    if created:
+        # Create a Profile only if the user is a resident
+        if instance.role == 'resident':
+            Profile.objects.create(user=instance)
+    else:
+        # Ensure the profile exists before attempting to save it
+        if hasattr(instance, 'profile'):
+            instance.profile.save()
 
 
 @receiver(post_migrate)

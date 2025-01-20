@@ -79,7 +79,7 @@ header {
 
 
 .hero {
-    background-image: url('../assets/images/home_background.png');
+    background-image: url('/static/assets/image/home-background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -19,7 +19,7 @@
     <header class="d-flex align-items-center bg-turquoise p-3">
       <a href="{% url 'home' %}"
         ><img
-          src="{% static 'assets/image/logo.jpg' %}"
+          src="{% static 'assets/image/logo.png' %}"
           alt="Logo"
           class="img-fluid"
           style="max-width: 80px"
@@ -50,6 +50,13 @@
               >CONTACT US</a
             >
           </li>
+          {% if user.is_authenticated %}
+          <p>Welcome, {{ user.username }}!</p>
+          <a href="{% url 'residents:logout' %}">Logout</a>
+          {% else %}
+          <a href="{% url 'residents:login' %}">Login</a>
+          <a href="{% url 'residents:register' %}">Register</a>
+      {% endif %}
         </ul>
       </nav>
     </header>
@@ -65,7 +72,7 @@
             <a href="{% url 'home' %}">
               <img
                 width="100px"
-                src="{% static 'image/logo.jpg' %}"
+                src="{% static 'assets/image/logo.png' %}"
                 alt="Logo"
                 class="img-fluid mb-3"
               />
@@ -96,7 +103,7 @@
             <div class="contact-details">
               <div class="d-flex align-items-center mb-2">
                 <img
-                  src="{% static 'assets/icons/location-dot-solid.svg' %}"
+                  src="{% static 'assets/icon/location.png' %}"
                   alt=""
                   class="me-2 icon-smaller"
                 />
@@ -105,7 +112,7 @@
               <div class="d-flex align-items-center mb-2">
                 <a href="tel:+25100436787" class="text-white">
                   <img
-                    src="{% static 'assets/icons/phone-solid.svg' %}"
+                    src="{% static 'assets/icon/call.png' %}"
                     alt=""
                     class="me-2 icon-smaller"
                   />
@@ -118,7 +125,7 @@
                   class="text-white"
                 >
                   <img
-                    src="{% static 'assets/icons/envelope-solid.svg' %}"
+                    src="{% static 'assets/icon/mail.png' %}"
                     alt=""
                     class="me-2 icon-smaller"
                   />
@@ -134,22 +141,22 @@
             <div class="social-icons mb-3">
               <a href="#"
                 ><img
-                  src="{% static 'assets/icons/facebook-brands-solid.svg' %}"
+                  src="{% static 'assets/icon/facebook.png' %}"
                   alt=""
               /></a>
               <a href="#"
                 ><img
-                  src="{% static 'assets/icons/instagram-brands-solid.svg' %}"
+                  src="{% static 'assets/icon/instagram.png' %}"
                   alt=""
               /></a>
               <a href="#"
                 ><img
-                  src="{% static 'assets/icons/linkedin-brands-solid.svg' %}"
+                  src="{% static 'assets/icon/linkidin.png' %}"
                   alt=""
               /></a>
               <a href="#"
                 ><img
-                  src="{% static 'assets/icons/twitter-brands-solid.svg' %}"
+                  src="{% static 'assets/icon/twitter.png' %}"
                   alt=""
               /></a>
             </div>
@@ -161,5 +168,5 @@
       </div>
     </footer>
   </body>
-  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </html>

@@ -31,9 +31,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-
-
-STATIC_ROOT = BASE_DIR/'staticfiles'
+# STATIC_ROOT = BASE_DIR/'static'
 
 # Use environment variables
 
@@ -168,3 +166,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 INTERNAL_IPS = ["127.0.0.1"]
 LOGIN_URL='/residents/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL='residents/login'
+AUTH_USER_MODEL = 'residents.CustomUser'
+

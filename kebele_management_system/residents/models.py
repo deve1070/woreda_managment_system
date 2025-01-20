@@ -1,6 +1,7 @@
 # models.py
 from django.contrib.auth.models import User,AbstractUser
 from django.db import models
+from django.conf import settings
 
 
 class ResidentialID(models.Model):
@@ -11,12 +12,11 @@ class ResidentialID(models.Model):
         return self.id_number
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)  # Use the custom user model
     residential_id = models.CharField(max_length=20, unique=True)
 
     def __str__(self):
         return self.user.username
-    
 
 class CustomUser(AbstractUser):
     ROLE_CHOICES = [
